@@ -10,7 +10,7 @@ router.get("/", moviesControllers.getAllMovies);
 router.get("/:mid", moviesControllers.getMovieByID);
 
 router.post(
-  "/",
+  "/add",
   [
     check("title").not().isEmpty(),
     check("imageUrl").not().isEmpty(),
