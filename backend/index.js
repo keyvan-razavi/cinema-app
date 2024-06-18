@@ -1,10 +1,10 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+require("dotenv").config();
+require("./db");
 
 const moviesRoutes = require("./routes/movies-routes");
 const HttpError = require("./models/http-error");
-require("dotenv").config();
-require("./db");
 
 const app = express();
 app.use(bodyParser.json());

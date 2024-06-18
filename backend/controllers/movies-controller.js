@@ -2,6 +2,7 @@ const HttpError = require("../models/http-error");
 const uuid = require("uuidv4");
 const { validationResult } = require("express-validator");
 
+//*** Mock data for movies ***
 let MOVIES = [
   {
     id: "01",
@@ -41,6 +42,7 @@ let MOVIES = [
   },
 ];
 
+// *** The middleware for getting all movies***
 const getAllMovies = (req, res, next) => {
   const movies = MOVIES;
 
@@ -51,6 +53,7 @@ const getAllMovies = (req, res, next) => {
   req.res.json({ movies });
 };
 
+// *** The middleware for getting a specific movie by its ID***
 const getMovieByID = (req, res, next) => {
   const movieId = req.params.mid;
   const movie = MOVIES.find((m) => {
@@ -64,6 +67,7 @@ const getMovieByID = (req, res, next) => {
   res.json({ movie });
 };
 
+// *** The middleware for creating movies***
 const addMovie = (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -85,6 +89,7 @@ const addMovie = (req, res, next) => {
   res.status(201).json({ movie: createdMovie });
 };
 
+// *** The middleware for editing movies***
 const updateMovieByID = (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -107,6 +112,7 @@ const updateMovieByID = (req, res, next) => {
   res.status(200).json({ movie: updatedMovie });
 };
 
+// *** The middleware for deleting a movie***
 const deleteMovieByID = (req, res, next) => {
   const movieId = req.params.mid;
 

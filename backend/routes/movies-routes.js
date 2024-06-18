@@ -5,6 +5,7 @@ const moviesControllers = require("../controllers/movies-controller");
 
 const router = express.Router();
 
+// here is our route management and their related vertifications
 router.get("/", moviesControllers.getAllMovies);
 
 router.get("/:mid", moviesControllers.getMovieByID);
