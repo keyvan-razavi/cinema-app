@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./Movies.css";
 
 const Movies = ({ movie }) => {
-  console.log("movie:", movie.id);
+  // ***here we get movie data through props and show the movie ->
+  // data in cards ***
   return (
     <div className="movie-card">
       <img src={movie.imageUrl} alt="" />

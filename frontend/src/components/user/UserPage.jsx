@@ -5,10 +5,11 @@ import Seats from "../seats/Seats";
 import { MOVIES } from "../../data";
 
 const UserPage = () => {
-  // const [movie, setMovie] = useState();
   const [booking, setBooking] = useState(false);
   console.log(booking);
-
+  
+  // ***this part is for getting data from backend***
+  // const [movie, setMovie] = useState();
   // useEffect(() => {
   //   const sendRequest = async () => {
   //     try {
@@ -25,8 +26,16 @@ const UserPage = () => {
   //   sendRequest();
   // }, []);
 
+  // ***here is where we toggle the movie card content upon clicks***
+
   // const onCancel = () => setBooking(false);
-  // const onToggle = () => setBooking(true);
+  const onToggle = () => {
+    if (booking === false) {
+      setBooking(true);
+    } else {
+      setBooking(false);
+    }
+  };
 
   return (
     <div className="user-container">
@@ -38,17 +47,17 @@ const UserPage = () => {
               <div key={m.id} className="movie-card">
                 {booking ? (
                   <>
-                    <Movies movie={m} />
-                    <div className="btn-container">
-                      <button>Book</button>
-                    </div>
-                  </>
-                ) : (
-                  <>
                     <Seats movie={m} />
                     <div className="btn-container">
                       <button>Submit</button>
                       <button>Cancel</button>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <Movies movie={m} />
+                    <div className="btn-container">
+                      <button>Book</button>
                     </div>
                   </>
                 )}

@@ -3,14 +3,16 @@ import "./AdminPage.css";
 import Movies from "../movies/Movies";
 import { MOVIES } from "../../data";
 
+// *** here we have 2 parts, one is for generating a form for ->
+// creating movies, and a section for showing on screen movies ->
+// which ADMIN can edit and delete them***
+
 const AdminPage = () => {
   const [title, setTitle] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [room, setroom] = useState("");
-
-  console.log(MOVIES);
 
   const addMovie = async (e) => {
     e.preventDefault();

@@ -1,13 +1,15 @@
 import React from "react";
 
 const Seats = ({ movie }) => {
-  console.log("hello");
   const rowsOfRoom = 8;
   const columnsOfRoom = 10;
   const table = document.createElement("table");
   const tbody = document.createElement("tbody");
   let tr = document.createElement("tr");
   let td = document.createElement("td");
+
+  // ***this part will generate a table for rooms in which USER ->
+  // can select one and submit him/her selection***
 
   const createTable = () => {
     for (let row = 0; row < rowsOfRoom; row++) {
@@ -23,26 +25,10 @@ const Seats = ({ movie }) => {
   };
   createTable();
 
-  console.log(table);
-
   return (
     <>
       <div className="movie-card">
         <img src={movie.imageUrl} alt="poster" />
-        <table>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-            </tr>{" "}
-            <tr>
-              <td></td>
-            </tr>{" "}
-            <tr>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
       </div>
     </>
   );
