@@ -1,6 +1,7 @@
 import React from "react";
 
-const Seats = () => {
+const Seats = ({ movie }) => {
+  console.log("hello");
   const rowsOfRoom = 8;
   const columnsOfRoom = 10;
   const table = document.createElement("table");
@@ -24,7 +25,27 @@ const Seats = () => {
 
   console.log(table);
 
-  return <>{table}</>;
+  return (
+    <>
+      <div className="movie-card">
+        <img src={movie.imageUrl} alt="poster" />
+        <table>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+            </tr>{" "}
+            <tr>
+              <td></td>
+            </tr>{" "}
+            <tr>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </>
+  );
 };
 
 export default Seats;
